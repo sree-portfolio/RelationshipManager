@@ -1,19 +1,15 @@
 # Use the official Node.js image as the base image
-FROM node:xx
+FROM node:14
 
-# Set environment variables
-ENV NODE_ENV production
+# Set the working directory
+WORKDIR /app
 
 # Install dependencies
-COPY package*.json /app/
+COPY relationship_manager_client/package.json relationship_manager_client/package-lock.json /app/
 RUN npm install
 
 # Copy the application code into the container
-COPY . /app/
-WORKDIR /app
+COPY relationship_manager_client/ /app/
 
-# Build the React app
-RUN npm run build
-
-# Serve the built app using a web server
+# Run the React application
 CMD ["npm", "start"]
