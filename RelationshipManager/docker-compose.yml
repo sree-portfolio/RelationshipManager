@@ -2,7 +2,7 @@ version: '3'
 services:
   backend:
     build:
-      context: ./r_server
+      context: ./relationship_manager_server
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
@@ -13,7 +13,7 @@ services:
 
   frontend:
     build:
-      context: ./r_client
+      context: ./relationship_manager_client
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
