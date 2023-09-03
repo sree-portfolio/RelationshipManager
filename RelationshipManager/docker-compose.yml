@@ -2,21 +2,18 @@ version: '3'
 services:
   backend:
     build:
-      context: ./relationship_manager_server
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: relationship_manager_server/Dockerfile
     ports:
       - "8000:8000"
-    # Add environment variables here
     environment:
-      - DEBUG=False
-    # Add database configuration if needed
+      - DEBUG=True
 
   frontend:
     build:
-      context: ./relationship_manager_client
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: relationship_manager_client/Dockerfile
     ports:
       - "3000:3000"
-    # Add environment variables here
     environment:
       - REACT_APP_API_URL=http://backend:8000
