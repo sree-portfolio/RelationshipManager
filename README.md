@@ -54,4 +54,4 @@ npm start
 The frontend development server will be accessible at http://localhost:3000/.
 The Django development server will be accessible at http://localhost:8000/.
 
-
+## Also attached a demo video of the project
